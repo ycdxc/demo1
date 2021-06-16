@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Timer</h1>
+    <span id="timer"></span>
+    <button onclick="start()">Start</button>
+    <button onclick="pause()">Pause</button>
+    <button onclick="reset()">Reset</button>
+    <script>
+      var hh = 00,
+        mm = 00,
+        ss = 00;
+      document.getElementById("timer").innerText = hh + ":" + mm + ":" + ss;
+      function start() {
+        timer = setInterval(onstart, 1000);
+      }
+      function onstart() {
+        ss += 1;
+        if (ss >= 60) {
+          mm += 1;
+          ss = 0;
+        }
+        if (mm >= 60) {
+          hh += 1;
+          mm = 0;
+          ss = 0;
+        }
+        document.getElementById("timer").innerText = hh + ":" + mm + ":" + ss;
+      }
+
+      function pause() {
+        clearInterval(this.timer);
+        this.timer = 0;
+      }
+
+      function reset() {
+        this.hh = 0;
+        this.mm = 0;
+        this.ss = 0;
+        document.getElementById("timer").innerText = hh + ":" + mm + ":" + ss;
+        clearInterval(this.timer);
+        this.timer = 0;
+      }
+    </script>
+  </body>
+</html>
