@@ -9,6 +9,44 @@
 
   <body>
     <script>
+      let Itodata = [
+        {
+          Capability: "PowerShell And Bash",
+          No_emp_assigned: "3979",
+          No_emp_undergoing: "3621",
+        },
+        {
+          Capability: "Bash",
+          No_emp_assigned: "263",
+          No_emp_undergoing: "200",
+        },
+
+        {
+          Capability: "PowerShell",
+          No_emp_assigned: "418",
+          No_emp_undergoing: "350",
+        },
+        {
+          Capability: "Python",
+          No_emp_assigned: "300",
+          No_emp_undergoing: "216",
+        },
+        {
+          Capability: "Ansible",
+          No_emp_assigned: "700",
+          No_emp_undergoing: "412",
+        },
+        {
+          Capability: "Win Automation",
+          No_emp_assigned: "150",
+          No_emp_undergoing: "96",
+        },
+        {
+          Capability: "RPA",
+          No_emp_assigned: "210",
+          No_emp_undergoing: "189",
+        },
+      ];
       /* set up XMLHttpRequest */
       var dataList;
       var url = "EmpTest.xlsx";
@@ -47,8 +85,9 @@
         // console.log(XLSX.utils.sheet_to_json(worksheet, {
         //     raw: true
         // }));
-        console.log("datalis####", dataList, dataList[0]);
-        $("#NameSec").text(dataList[0]);
+        console.log("datalis####", dataList);
+        console.log("ito", Itodata);
+        $("#NameSec").text(dataList[0].SALARY);
       };
 
       oReq.send();
